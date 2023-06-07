@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/background.svg");
+    background-repeat: no-repeat;
+}
+
+.img-background {
+    position: fixed;
+    height: 1080px;
+    width: 2560px;
+    max-width: 100%;
+    z-index: -1;
+    display: none;
+}
+
+
+.summoner-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.ranks {
+    display: flex;
+    justify-content: center;
+    max-width: 250px;
+    max-height: 250px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2rem;
+}
+
+.rank-Name {
+    color: deeppink;
+}
+
+.sum-Icon {
+    width: 100px;
+}
+
+.matchMvp {
+    color: gold;
+}
+
+.sum-Name {
+    color: blueviolet;
+    width: 100%;
+}
+
+.sum-Level {
+    color: greenyellow;
+    width: 100%;
+}
+
+.rank-Icon {
+    width: auto;
+    height: 150px;
+    text-align: center;
+}
+
+h2, h3 {
+    text-align: center;
+    color: green;
+}
+
+p {
+    color: palevioletred;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    color: deepskyblue;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+h5 {
+    text-align: center;
+    color: goldenrod;
+}
+
+a.btn{
+    background: linear-gradient(to right,#05e5fc ,#247dc7);
+    background-color: #05e5fc;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 14px 15px;
+    border: 0px solid #000;
+    border-radius: 10px;
+    display: inline-block;
+   }
+   a.btn:hover{
+    background: linear-gradient(to right,#51e8fc ,#588fcd);
+    background-color: #51e8fc;
+   }
+   a.btn:active{
+    transform: scale(0.95);
+   }
