@@ -13,7 +13,7 @@ header.appendChild(div3);
 async function getApi() {
     try {
       const name = search.value;
-      const url = `http://localhost:5500/api/summoner/${name}`;
+      const url = '/.netlify/functions/riotApiProxy?name=' + name;
   
       const response = await axios.get(url);
       const data = response.data;
