@@ -2,6 +2,7 @@ const header = document.querySelector('.header');
 const div3 = document.createElement('div');
 var search = document.createElement('input');
 search.setAttribute('type', 'text');
+search.setAttribute('class', 'input');
 const btn = document.createElement('a');
 btn.textContent += "Search";
 btn.setAttribute('class', 'btn');
@@ -17,42 +18,21 @@ async function getApi() {
   
       const response = await axios.get(url);
       const data = response.data;
+
+      const summonerId = data.id;
   
       renderHTML(data);
+      getSumRank(summonerId);
     } catch (error) {
       console.log('Failed to fetch API:', error);
     }
   }
 
-btn.addEventListener("click", getApi);
-
-getApi();
-
-function renderHTML(data) {
-    const container = document.querySelector('.container');
-    container.innerHTML = "";
-    const div = document.createElement('div');
-    const sumIcon = document.createElement('img');
-    const sumName = document.createElement('h2');
-    sumName.classList.add('sum-Name');
-    const sumLevel = document.createElement('h3');
-    sumLevel.classList.add('sum-Level');
-    sumIcon.classList.add('sum-Icon');
-    sumName.textContent = data.name;
-    sumLevel.textContent = "Level: " + data.summonerLevel;
-    sumIcon.setAttribute('src', 'https://ddragon.leagueoflegends.com/cdn/13.6.1/img/profileicon/' + data.profileIconId + '.png');
-    div.appendChild(sumIcon);
-    div.appendChild(sumName);
-    div.appendChild(sumLevel);
-    container.appendChild(div);
-    console.log(data)
-
-    sumRankUrl = 'https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/' + data.id + '?api_key=' + API_KEY;
-    getSummonerRank(sumRankUrl)
-    sumMatchUrl = 'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/' + data.puuid + '/ids?api_key=' + API_KEY;
-    getSummonerMatch(sumMatchUrl)
-}
-
+  btn.addEventListener("click", function(event) {
+    event.preventDefault();
+    getApi();
+    getSumRank();
+  });
 /*async function getSummonerRank(sumRankUrl) {
     try {
 

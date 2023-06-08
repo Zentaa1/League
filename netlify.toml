@@ -1,2 +1,7 @@
 [build]
   functions = "functions"
+
+[[dev.watch]]
+directory = "src"
+[[dev.watch]]
+directory = "css"
