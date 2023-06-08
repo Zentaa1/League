@@ -6,38 +6,29 @@ const btn = document.createElement('a');
 btn.textContent += "Search";
 btn.setAttribute('class', 'btn');
 btn.setAttribute('type', 'submit');
-btn.addEventListener("click", getApi);
 div3.appendChild(search);
-div3.appendChild(btn)
+div3.appendChild(btn);
 header.appendChild(div3);
-
-
-
-let API_KEY = "";
-let sumIdUrl;
-let sumRankUrl;
-let sumMatchUrl;
-let recentMatchUrl;
-
 
 async function getApi() {
     try {
       const name = search.value;
-      const url = `http://127.0.0.1:5500/api/summoner/${name}`;
+      const url = `http://localhost:5500/api/summoner/${name}`;
   
-      const response = await fetch(url);
-      const data = await response.json();
+      const response = await axios.get(url);
+      const data = response.data;
   
       renderHTML(data);
     } catch (error) {
-      console.log('Failed to fetch API');
+      console.log('Failed to fetch API:', error);
     }
   }
 
+btn.addEventListener("click", getApi);
+
 getApi();
 
-
-function renderHTml(data) {
+function renderHTML(data) {
     const container = document.querySelector('.container');
     container.innerHTML = "";
     const div = document.createElement('div');

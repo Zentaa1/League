@@ -1,7 +1,11 @@
 const express = require('express');
+const cors = require('cors');
+const app = express();
 const https = require('https');
 
-const app = express();
+// Enable CORS
+app.use(cors());
+
 const port = 5500; // Change the port number if needed
 
 app.use(express.json());
@@ -9,7 +13,7 @@ app.use(express.json());
 // Define an endpoint to handle the API request
 app.get('/api/summoner/:name', (req, res) => {
   const { name } = req.params;
-  const API_KEY = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+  const API_KEY = process.env.API_KEY; // Replace 'YOUR_API_KEY' with your actual API key
 
   const options = {
     hostname: 'euw1.api.riotgames.com',
