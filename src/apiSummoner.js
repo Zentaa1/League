@@ -3,6 +3,7 @@ const div3 = document.createElement('div');
 var search = document.createElement('input');
 search.setAttribute('type', 'text');
 search.setAttribute('class', 'input');
+search.placeholder = "Summoner name...";
 const btn = document.createElement('a');
 btn.textContent += "Search";
 btn.setAttribute('class', 'btn');
