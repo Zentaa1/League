@@ -18,10 +18,6 @@ function renderSumRank(sumRank) {
       div2.appendChild(rankName);
       div2.appendChild(rankIcon);
       ranks.appendChild(div2);
-  
-      console.log(rankedSoloEntry);
-      console.log(rankedSoloEntry.tier);
-      console.log(rankedSoloEntry.rank);
     } else {
       console.log('Ranked solo entry not found');
     }
