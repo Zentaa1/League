@@ -15,5 +15,4 @@ function renderHTML(data) {
     div.appendChild(sumName);
     div.appendChild(sumLevel);
     container.appendChild(div);
-    console.log(data);
 }
