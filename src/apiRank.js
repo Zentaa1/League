@@ -1,7 +1,7 @@
 async function getSumRank(summonerId) {
   try {
-    const rankResponse = await axios.get(`/.netlify/functions/summonerRank?summonerId=${summonerId}`);
-    const sumRank = rankResponse.data;
+    const sumRankResponse = await axios.get(`/.netlify/functions/summonerRank?summonerId=${summonerId}`);
+    const sumRank = sumRankResponse.data;
 
     renderSumRank(sumRank);
   } catch (error) {
