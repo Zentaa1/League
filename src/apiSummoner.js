@@ -23,14 +23,14 @@ async function getApi() {
       const summonerId = data.id;
       const encryptedId = data.puuid;
       console.log(data);
-  
+      
       renderHTML(data);
       getSumRank(summonerId);
       getSumMast(encryptedId);
     } catch (error) {
       console.log('Failed to fetch API:', error);
       const container = document.querySelector('.container');
-      container.innerHTML = ""; 
+      container.innerHTML = "";
       const noSumDiv = document.createElement('div');
       const noSummoner = document.createElement('h2');
       noSummoner.textContent = "Could not find summoner " + search.value;

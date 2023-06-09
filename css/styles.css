@@ -12,6 +12,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .img-background {
@@ -116,3 +120,28 @@ a.btn{
     border-image: linear-gradient(to right,#51e8fc ,#588fcd) 1;
     outline: none;
 }
+
+.mastery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.champion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .champion img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .champion p {
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
