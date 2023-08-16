@@ -21,12 +21,11 @@ async function getApi() {
       const data = response.data;
 
       const summonerId = data.id;
-      const encryptedId = data.puuid;
       console.log(data);
       
       renderHTML(data);
       getSumRank(summonerId);
-      getSumMast(encryptedId);
+      getSumMast(summonerId);
     } catch (error) {
       console.log('Failed to fetch API:', error);
       const container = document.querySelector('.container');
@@ -43,5 +42,5 @@ async function getApi() {
     event.preventDefault();
     getApi();
     getSumRank(summonerId);
-    getSumMast(encryptedId);
+    getSumMast(summonerId);
   });
