@@ -18,6 +18,10 @@
     flex-wrap: wrap;
   }
 
+  .header {
+    display: flex;
+  }
+
   .img-background {
     display: none;
   }
@@ -106,7 +110,7 @@ a.btn{
     transform: scale(0.95);
    }
 
-.input {
+.input{
     background-color: #001220;
     color: #ffffff;
     font-family: Arial;
@@ -119,6 +123,22 @@ a.btn{
     display: inline-block;
     border-image: linear-gradient(to right,#51e8fc ,#588fcd) 1;
     outline: none;
+}
+
+.serverDropdown {
+  width: 130px;
+  background-color: #001220;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 14px 15px;
+  border-radius: 10px;
+  display: inline-block;
+  border-image: linear-gradient(to right,#51e8fc ,#588fcd) 1;
+  outline: none;
 }
 
 .mastery {

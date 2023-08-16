@@ -12,10 +12,13 @@ div3.appendChild(search);
 div3.appendChild(btn);
 header.appendChild(div3);
 
+const chooseServer = document.getElementById('chooseServer');
+
 async function getApi() {
     try {
       const name = search.value;
-      const url = '/.netlify/functions/riotApiProxy?name=' + name;
+      const server = chooseServer.value;
+      const url = `/.netlify/functions/riotApiProxy?name=${name}&server=${server}`;
   
       const response = await axios.get(url);
       const data = response.data;
@@ -24,8 +27,8 @@ async function getApi() {
       console.log(data);
       
       renderHTML(data);
-      getSumRank(summonerId);
-      getSumMast(summonerId);
+      getSumRank(summonerId, server);
+      getSumMast(summonerId, server);
     } catch (error) {
       console.log('Failed to fetch API:', error);
       const container = document.querySelector('.container');
@@ -41,6 +44,6 @@ async function getApi() {
   btn.addEventListener("click", function(event) {
     event.preventDefault();
     getApi();
-    getSumRank(summonerId);
-    getSumMast(summonerId);
+    getSumRank(summonerId, server);
+    getSumMast(summonerId, server);
   });

@@ -2,11 +2,10 @@ const axios = require('axios');
 
 exports.handler = async (event, context) => {
   try {
-    const { summonerId } = event.queryStringParameters;
-    //const API_KEY = "RGAPI-0e528f30-5820-4b58-9350-8e61ab28ee0e";
+    const { summonerId, server } = event.queryStringParameters;
     const API_KEY = process.env.API_KEY;
 
-    const sumRankUrl = `https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${API_KEY}`;
+    const sumRankUrl = `https://${server}.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${API_KEY}`;
 
     const sumRankResponse = await axios.get(sumRankUrl);
     const sumRankData = sumRankResponse.data;

@@ -1,7 +1,7 @@
-async function getSumMast(summonerId) {
+async function getSumMast(summonerId, server) {
     try {
         
-        const sumMastResponse = await axios.get(`/.netlify/functions/championMastery?summonerId=${summonerId}`);
+        const sumMastResponse = await axios.get(`/.netlify/functions/championMastery?summonerId=${summonerId}&server=${server}`);
         const sumMast = sumMastResponse.data;
 
         
