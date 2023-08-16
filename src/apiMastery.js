@@ -5,7 +5,7 @@ async function getSumMast(summonerId) {
         const sumMast = sumMastResponse.data;
 
         
-        const champResponse = await axios.get('http://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json');
+        const champResponse = await axios.get('https://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json');
         const champs = champResponse.data.data;
 
         
